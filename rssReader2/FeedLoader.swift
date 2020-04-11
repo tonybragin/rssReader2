@@ -24,7 +24,7 @@ enum RSSErrors: Error {
 
 protocol FeedLoaderProtocol {
     
-    typealias FeedLoaderComplition = ((_ result: Result<[RSSFeedItem], RSSErrors>) -> ())
+    typealias FeedLoaderComplition = ((_ result: Result<[FeedDataItem], RSSErrors>) -> ())
     
     func getItems(for path: String, complition: @escaping FeedLoaderComplition)
 }
@@ -40,8 +40,20 @@ class FeedLoader: FeedLoaderProtocol {
         parser.parseAsync { (result) in
             switch result {
             case .success(let feed):
-                if let rssFeed = feed.rssFeed?.items {
-                    complition(.success(rssFeed))
+                if let rssFeed = feed.rssFeed,
+                    let feedItems = rssFeed.items {
+                    
+                    let source = rssFeed.title
+                    let imagePath = rssFeed.image?.url
+                    
+                    var feedData: [FeedDataItem] = []
+                    for item in feedItems {
+                        feedData.append(FeedDataItem(source: source,
+                                                     imagePath: imagePath,
+                                                     title: item.title,
+                                                     description: item.description))
+                    }
+                    complition(.success(feedData))
                 } else {
                     complition(.failure(.feedError))
                 }
@@ -51,3 +63,9 @@ class FeedLoader: FeedLoaderProtocol {
     }
 }
 
+struct FeedDataItem {
+    var source: String?
+    var imagePath: String?
+    var title: String?
+    var description: String?
+}

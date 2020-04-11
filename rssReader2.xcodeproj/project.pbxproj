@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		C1E763720A0EF1310D2D4DB3 /* Pods_rssReader2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF615FDF1955C72454026DD /* Pods_rssReader2.framework */; };
 		EADC2C472440BBB6004364E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C462440BBB6004364E5 /* AppDelegate.swift */; };
-		EADC2C4B2440BBB6004364E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C4A2440BBB6004364E5 /* ViewController.swift */; };
+		EADC2C4B2440BBB6004364E5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C4A2440BBB6004364E5 /* FeedViewController.swift */; };
 		EADC2C4E2440BBB6004364E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADC2C4C2440BBB6004364E5 /* Main.storyboard */; };
 		EADC2C502440BBB9004364E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EADC2C4F2440BBB9004364E5 /* Assets.xcassets */; };
 		EADC2C532440BBB9004364E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADC2C512440BBB9004364E5 /* LaunchScreen.storyboard */; };
-		EADC2C5B2440C01A004364E5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C5A2440C01A004364E5 /* TableViewCell.swift */; };
+		EADC2C5B2440C01A004364E5 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C5A2440C01A004364E5 /* FeedTableViewCell.swift */; };
 		EADC2C5D2440C27D004364E5 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C5C2440C27D004364E5 /* FeedLoader.swift */; };
+		EADC2C5F244197EA004364E5 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C5E244197EA004364E5 /* UIStoryboard.swift */; };
+		EADC2C6124419821004364E5 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C6024419821004364E5 /* Builder.swift */; };
+		EADC2C63244198EC004364E5 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C62244198EC004364E5 /* FeedPresenter.swift */; };
+		EADC2C6524419FE0004364E5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C6424419FE0004364E5 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +27,17 @@
 		D11016C5E8FE355E38A62CA7 /* Pods-rssReader2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssReader2.release.xcconfig"; path = "Target Support Files/Pods-rssReader2/Pods-rssReader2.release.xcconfig"; sourceTree = "<group>"; };
 		EADC2C432440BBB6004364E5 /* rssReader2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rssReader2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADC2C462440BBB6004364E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EADC2C4A2440BBB6004364E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EADC2C4A2440BBB6004364E5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EADC2C4D2440BBB6004364E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EADC2C4F2440BBB9004364E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EADC2C522440BBB9004364E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EADC2C542440BBB9004364E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EADC2C5A2440C01A004364E5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		EADC2C5A2440C01A004364E5 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		EADC2C5C2440C27D004364E5 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
+		EADC2C5E244197EA004364E5 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		EADC2C6024419821004364E5 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		EADC2C62244198EC004364E5 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
+		EADC2C6424419FE0004364E5 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,25 @@
 				D11016C5E8FE355E38A62CA7 /* Pods-rssReader2.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EA26EA122441CB650082F24D /* FeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EADC2C4A2440BBB6004364E5 /* FeedViewController.swift */,
+				EADC2C62244198EC004364E5 /* FeedPresenter.swift */,
+				EADC2C5A2440C01A004364E5 /* FeedTableViewCell.swift */,
+			);
+			path = FeedViewController;
+			sourceTree = "<group>";
+		};
+		EA26EA132441CB7E0082F24D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EADC2C5E244197EA004364E5 /* UIStoryboard.swift */,
+				EADC2C6424419FE0004364E5 /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EADC2C3A2440BBB6004364E5 = {
@@ -75,10 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				EADC2C462440BBB6004364E5 /* AppDelegate.swift */,
+				EADC2C6024419821004364E5 /* Builder.swift */,
 				EADC2C5C2440C27D004364E5 /* FeedLoader.swift */,
-				EADC2C4A2440BBB6004364E5 /* ViewController.swift */,
-				EADC2C5A2440C01A004364E5 /* TableViewCell.swift */,
+				EA26EA122441CB650082F24D /* FeedViewController */,
 				EADC2C4C2440BBB6004364E5 /* Main.storyboard */,
+				EA26EA132441CB7E0082F24D /* Extensions */,
 				EADC2C4F2440BBB9004364E5 /* Assets.xcassets */,
 				EADC2C512440BBB9004364E5 /* LaunchScreen.storyboard */,
 				EADC2C542440BBB9004364E5 /* Info.plist */,
@@ -209,10 +237,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EADC2C5B2440C01A004364E5 /* TableViewCell.swift in Sources */,
-				EADC2C4B2440BBB6004364E5 /* ViewController.swift in Sources */,
+				EADC2C5B2440C01A004364E5 /* FeedTableViewCell.swift in Sources */,
+				EADC2C5F244197EA004364E5 /* UIStoryboard.swift in Sources */,
+				EADC2C4B2440BBB6004364E5 /* FeedViewController.swift in Sources */,
 				EADC2C5D2440C27D004364E5 /* FeedLoader.swift in Sources */,
 				EADC2C472440BBB6004364E5 /* AppDelegate.swift in Sources */,
+				EADC2C63244198EC004364E5 /* FeedPresenter.swift in Sources */,
+				EADC2C6524419FE0004364E5 /* UIViewController.swift in Sources */,
+				EADC2C6124419821004364E5 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,10 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class FeedTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var sourceLabel: UILabel!
+    @IBOutlet weak var sourceImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
@@ -20,6 +21,6 @@ class TableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
 }
