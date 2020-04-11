@@ -8,6 +8,14 @@
 
 import FeedKit
 
+struct FeedDataItem {
+    var source: String?
+    var imagePath: String?
+    var title: String?
+    var description: String?
+    var publicationDay: Date?
+}
+
 enum RSSErrors: Error {
     case feedError
     case parserError(error: ParserError)
@@ -30,6 +38,7 @@ protocol FeedLoaderProtocol {
 }
 
 class FeedLoader: FeedLoaderProtocol {
+    
     func getItems(for path: String, complition: @escaping FeedLoaderComplition) {
         guard let feedURL = URL(string: path) else {
             complition(.failure(.URLError))
@@ -62,12 +71,4 @@ class FeedLoader: FeedLoaderProtocol {
             }
         }
     }
-}
-
-struct FeedDataItem {
-    var source: String?
-    var imagePath: String?
-    var title: String?
-    var description: String?
-    var publicationDay: Date?
 }

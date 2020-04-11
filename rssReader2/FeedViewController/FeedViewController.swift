@@ -17,6 +17,8 @@ protocol FeedDataItemProtocol {
     var publicationDay: Date? { get }
 }
 
+extension FeedDataItem: FeedDataItemProtocol {}
+
 protocol FeedViewControllerProtocol: UIViewController {
     var tableView: UITableView! { get set }
     var presenter: FeedPresenterProtocol? { get set }
@@ -24,8 +26,13 @@ protocol FeedViewControllerProtocol: UIViewController {
 }
 
 class FeedViewController: UIViewController, FeedViewControllerProtocol {
-
-    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Constants
+    
+    private let selectedCellHeight: CGFloat = 350
+    private let unselectedCellHeight: CGFloat = 120
+    
+    // MARK: - Properties
     
     var presenter: FeedPresenterProtocol?
     var feedData: [FeedDataItemProtocol] = [] {
@@ -35,10 +42,13 @@ class FeedViewController: UIViewController, FeedViewControllerProtocol {
             }
         }
     }
-    
     private var selectedCellIndexPath: IndexPath?
-    private let selectedCellHeight: CGFloat = 350
-    private let unselectedCellHeight: CGFloat = 120
+    
+    // MARK: - Outlets
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +57,14 @@ class FeedViewController: UIViewController, FeedViewControllerProtocol {
         tableView.dataSource = self
     }
 
-
+    // MARK: - IBActions
+    
     @IBAction func addButtonTouched(_ sender: UIBarButtonItem) {
         presenter?.addButtonTouched()
     }
 }
+
+// MARK: - Working with UITableViewDataSource
 
 extension FeedViewController: UITableViewDataSource {
     
@@ -68,21 +81,12 @@ extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
-        
-        if let imageString = feedData[indexPath.row].imagePath,
-            let imageURL = URL(string: imageString) {
-            cell.sourceImageView.kf.setImage(with: imageURL)
-        }
-        
-        cell.sourceLabel.text = feedData[indexPath.row].source
-        cell.titleLabel.text = feedData[indexPath.row].title
-        cell.descriptionTextView.text = feedData[indexPath.row].description
-        
+        cell.configure(for: feedData[indexPath.row])
         return cell
     }
-    
-    
 }
+
+// MARK: - Working with UITableViewDelegate
 
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -97,5 +101,3 @@ extension FeedViewController: UITableViewDelegate {
         tableView.endUpdates()
     }
 }
-
-extension FeedDataItem: FeedDataItemProtocol {}
