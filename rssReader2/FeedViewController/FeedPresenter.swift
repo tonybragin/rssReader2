@@ -37,7 +37,11 @@ class FeedPresenter: FeedPresenterProtocol {
                 self?.feedLoader.getItems(for: path, complition: { (result) in
                     switch result {
                     case .success(let items):
-                        self?.viewController?.feedData = items
+                        if let viewController = self?.viewController {
+                            var oldFeedData = viewController.feedData
+                            oldFeedData.append(contentsOf: items)
+                            viewController.feedData = oldFeedData
+                        }
                     case .failure(let error):
                         self?.viewController?.alert(title: "Error",
                                                     message: error.description)
