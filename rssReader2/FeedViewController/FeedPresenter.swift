@@ -12,7 +12,6 @@ protocol FeedPresenterProtocol {
     init (viewController: FeedViewControllerProtocol,
           feedLoader: FeedLoaderProtocol)
     
-    func viewDidLoad()
     func addButtonTouched()
 }
 
@@ -25,10 +24,6 @@ class FeedPresenter: FeedPresenterProtocol {
                    feedLoader: FeedLoaderProtocol) {
         self.viewController = viewController
         self.feedLoader = feedLoader
-    }
-    
-    func viewDidLoad() {
-        
     }
     
     func addButtonTouched() {

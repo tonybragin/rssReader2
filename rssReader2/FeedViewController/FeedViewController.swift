@@ -36,13 +36,15 @@ class FeedViewController: UIViewController, FeedViewControllerProtocol {
         }
     }
     
+    private var selectedCellIndexPath: IndexPath?
+    private let selectedCellHeight: CGFloat = 350
+    private let unselectedCellHeight: CGFloat = 120
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        presenter?.viewDidLoad()
     }
 
 
@@ -54,7 +56,10 @@ class FeedViewController: UIViewController, FeedViewControllerProtocol {
 extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if selectedCellIndexPath == indexPath {
+            return selectedCellHeight
+        }
+        return unselectedCellHeight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,6 +76,7 @@ extension FeedViewController: UITableViewDataSource {
         
         cell.sourceLabel.text = feedData[indexPath.row].source
         cell.titleLabel.text = feedData[indexPath.row].title
+        cell.descriptionTextView.text = feedData[indexPath.row].description
         
         return cell
     }
@@ -79,7 +85,17 @@ extension FeedViewController: UITableViewDataSource {
 }
 
 extension FeedViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedCellIndexPath != nil && selectedCellIndexPath == indexPath {
+            selectedCellIndexPath = nil
+            tableView.deselectRow(at: indexPath, animated: true)
+        } else {
+            selectedCellIndexPath = indexPath
+        }
+
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
 }
 
 extension FeedDataItem: FeedDataItemProtocol {}
