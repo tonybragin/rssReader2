@@ -12,7 +12,7 @@ extension UIViewController {
     
     func alert(title: String?, message: String?) {
         let alert = UIAlertController(title: title,
-                                      message: title,
+                                      message: message,
                                       preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK",
