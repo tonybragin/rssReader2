@@ -35,7 +35,9 @@ class FeedPresenter: FeedPresenterProtocol {
     func addButtonTouched() {
         viewController?.presentAddFeedAlert(complition: { [weak self] (path) in
             if let path = path {
+                self?.viewController?.startLoading()
                 self?.feedLoader.getItems(for: path, complition: { (result) in
+                    self?.viewController?.endLoading()
                     switch result {
                     case .success(let items):
                         self?.reloadViewController(with: items)
@@ -62,5 +64,5 @@ class FeedPresenter: FeedPresenterProtocol {
             }
             viewController?.feedData = feedData
         }
-    }    
+    }
 }

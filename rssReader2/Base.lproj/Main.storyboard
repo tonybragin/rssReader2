@@ -88,20 +88,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ecD-5t-rDp">
+                                <rect key="frame" x="188.5" y="410" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ecD-5t-rDp" firstAttribute="centerX" secondItem="FjZ-6e-PW7" secondAttribute="centerX" id="8Qv-7R-qmZ"/>
                             <constraint firstItem="FjZ-6e-PW7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ABb-Qx-DWr"/>
                             <constraint firstItem="FjZ-6e-PW7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gud-W1-9Wp"/>
                             <constraint firstItem="Ha8-JM-OGj" firstAttribute="top" secondItem="FjZ-6e-PW7" secondAttribute="bottom" id="HKh-kx-btu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ha8-JM-OGj" secondAttribute="bottom" id="Hdm-bN-Iej"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FjZ-6e-PW7" secondAttribute="trailing" id="gSJ-Sx-vSv"/>
+                            <constraint firstItem="ecD-5t-rDp" firstAttribute="centerY" secondItem="FjZ-6e-PW7" secondAttribute="centerY" id="h5H-uD-o2D"/>
                             <constraint firstItem="Ha8-JM-OGj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j9w-91-GgM"/>
                             <constraint firstItem="Ha8-JM-OGj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jlr-7l-B5r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ecD-5t-rDp" id="gGK-md-KXd"/>
                         <outlet property="tableView" destination="FjZ-6e-PW7" id="3ed-8k-SvU"/>
                     </connections>
                 </viewController>

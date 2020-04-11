@@ -23,6 +23,9 @@ protocol FeedViewControllerProtocol: UIViewController {
     var tableView: UITableView! { get set }
     var presenter: FeedPresenterProtocol? { get set }
     var feedData: [FeedDataItemProtocol] { get set }
+    
+    func startLoading()
+    func endLoading()
 }
 
 class FeedViewController: UIViewController, FeedViewControllerProtocol {
@@ -47,14 +50,33 @@ class FeedViewController: UIViewController, FeedViewControllerProtocol {
     // MARK: - Outlets
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        endLoading()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    // MARK: - Public
+    
+    func startLoading() {
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.isHidden = false
+            self?.activityIndicator.startAnimating()
+        }
+        
+    }
+    
+    func endLoading() {
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.isHidden = true
+        }
+        
     }
 
     // MARK: - IBActions
