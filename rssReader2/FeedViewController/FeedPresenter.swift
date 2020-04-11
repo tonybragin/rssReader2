@@ -38,9 +38,16 @@ class FeedPresenter: FeedPresenterProtocol {
                     switch result {
                     case .success(let items):
                         if let viewController = self?.viewController {
-                            var oldFeedData = viewController.feedData
-                            oldFeedData.append(contentsOf: items)
-                            viewController.feedData = oldFeedData
+                            var feedData = viewController.feedData
+                            feedData.append(contentsOf: items)
+                            feedData.sort { (first, second) -> Bool in
+                                if let firstDate = first.publicationDay,
+                                    let secondDate = second.publicationDay {
+                                    return firstDate < secondDate
+                                }
+                                return false
+                            }
+                            viewController.feedData = feedData
                         }
                     case .failure(let error):
                         self?.viewController?.alert(title: "Error",

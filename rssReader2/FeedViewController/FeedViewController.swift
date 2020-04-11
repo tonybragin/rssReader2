@@ -14,6 +14,7 @@ protocol FeedDataItemProtocol {
     var imagePath: String? { get }
     var title: String? { get }
     var description: String? { get }
+    var publicationDay: Date? { get }
 }
 
 protocol FeedViewControllerProtocol: UIViewController {

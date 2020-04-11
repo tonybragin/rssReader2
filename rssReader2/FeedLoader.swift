@@ -51,7 +51,8 @@ class FeedLoader: FeedLoaderProtocol {
                         feedData.append(FeedDataItem(source: source,
                                                      imagePath: imagePath,
                                                      title: item.title,
-                                                     description: item.description))
+                                                     description: item.description,
+                                                     publicationDay: item.pubDate))
                     }
                     complition(.success(feedData))
                 } else {
@@ -68,4 +69,5 @@ struct FeedDataItem {
     var imagePath: String?
     var title: String?
     var description: String?
+    var publicationDay: Date?
 }
