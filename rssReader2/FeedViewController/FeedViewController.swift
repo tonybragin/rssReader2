@@ -98,6 +98,13 @@ extension FeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if feedData.isEmpty {
+            tableView.backgroundView = EmptyTableView(frame: tableView.frame)
+            tableView.separatorStyle = .none
+        } else {
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
+        }
         return feedData.count
     }
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C1E763720A0EF1310D2D4DB3 /* Pods_rssReader2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF615FDF1955C72454026DD /* Pods_rssReader2.framework */; };
+		EA3157D22442E94500059BEF /* EmptyTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3157D12442E94500059BEF /* EmptyTableView.xib */; };
+		EA3157D42442EE4700059BEF /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3157D32442EE4700059BEF /* EmptyTableView.swift */; };
 		EADC2C472440BBB6004364E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C462440BBB6004364E5 /* AppDelegate.swift */; };
 		EADC2C4B2440BBB6004364E5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC2C4A2440BBB6004364E5 /* FeedViewController.swift */; };
 		EADC2C4E2440BBB6004364E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADC2C4C2440BBB6004364E5 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		2DF615FDF1955C72454026DD /* Pods_rssReader2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rssReader2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3404E4C76CA781D359A0D5 /* Pods-rssReader2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssReader2.debug.xcconfig"; path = "Target Support Files/Pods-rssReader2/Pods-rssReader2.debug.xcconfig"; sourceTree = "<group>"; };
 		D11016C5E8FE355E38A62CA7 /* Pods-rssReader2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssReader2.release.xcconfig"; path = "Target Support Files/Pods-rssReader2/Pods-rssReader2.release.xcconfig"; sourceTree = "<group>"; };
+		EA3157D12442E94500059BEF /* EmptyTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableView.xib; sourceTree = "<group>"; };
+		EA3157D32442EE4700059BEF /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
 		EADC2C432440BBB6004364E5 /* rssReader2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rssReader2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADC2C462440BBB6004364E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EADC2C4A2440BBB6004364E5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EA3157D52442EE5200059BEF /* EmptyTableView */ = {
+			isa = PBXGroup;
+			children = (
+				EA3157D12442E94500059BEF /* EmptyTableView.xib */,
+				EA3157D32442EE4700059BEF /* EmptyTableView.swift */,
+			);
+			path = EmptyTableView;
+			sourceTree = "<group>";
+		};
 		EADC2C3A2440BBB6004364E5 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +119,7 @@
 				EADC2C5C2440C27D004364E5 /* FeedLoader.swift */,
 				EA26EA122441CB650082F24D /* FeedViewController */,
 				EADC2C4C2440BBB6004364E5 /* Main.storyboard */,
+				EA3157D52442EE5200059BEF /* EmptyTableView */,
 				EA26EA132441CB7E0082F24D /* Extensions */,
 				EADC2C4F2440BBB9004364E5 /* Assets.xcassets */,
 				EADC2C512440BBB9004364E5 /* LaunchScreen.storyboard */,
@@ -183,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EADC2C532440BBB9004364E5 /* LaunchScreen.storyboard in Resources */,
+				EA3157D22442E94500059BEF /* EmptyTableView.xib in Resources */,
 				EADC2C502440BBB9004364E5 /* Assets.xcassets in Resources */,
 				EADC2C4E2440BBB6004364E5 /* Main.storyboard in Resources */,
 			);
@@ -238,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EADC2C5B2440C01A004364E5 /* FeedTableViewCell.swift in Sources */,
+				EA3157D42442EE4700059BEF /* EmptyTableView.swift in Sources */,
 				EADC2C5F244197EA004364E5 /* UIStoryboard.swift in Sources */,
 				EADC2C4B2440BBB6004364E5 /* FeedViewController.swift in Sources */,
 				EADC2C5D2440C27D004364E5 /* FeedLoader.swift in Sources */,
